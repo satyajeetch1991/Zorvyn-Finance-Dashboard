@@ -7,7 +7,7 @@ A full-featured personal finance dashboard built with **React 19 (Vite)**, **Jav
 ## Live Demo
 
 > Run locally — see [Getting Started](#getting-started) below.
-https://financee-dashboard.vercel.app/dashboard
+https://zorvyn-finance-dashboard-eta-dun.vercel.app/dashboard
 ---
 
 
@@ -85,7 +85,7 @@ https://financee-dashboard.vercel.app/dashboard
 - **Collapsible sidebar** on desktop, **scrollable bottom nav** on mobile (6 tabs)
 - **Framer Motion** animations — stagger cards, slide-in panels, animated progress bars, count-up numbers
 - **Responsive** — works on mobile, tablet, and desktop
-- **Client-side only app** — no SSR dependency
+
 
 ---
 
@@ -107,17 +107,6 @@ https://financee-dashboard.vercel.app/dashboard
 ---
 
 ## Getting Started
-
-### Prerequisites
-
-- **Node.js** v18 or higher — [Download](https://nodejs.org)
-- **npm** v9 or higher (comes with Node.js)
-
-Check your versions:
-```bash
-node -v
-npm -v
-```
 
 ### Installation
 
@@ -315,28 +304,4 @@ The heatmap is one of the heavier visual components, so it's loaded lazily to re
 ### Why `createPortal` for the Notification Panel?
 The notification panel is rendered inside the Topbar which creates a CSS stacking context (`z-index: 20`). Without a portal, the panel would appear behind the Sidebar (`z-index: 30`). Rendering via `createPortal` at `document.body` escapes any stacking context.
 
----
 
-## Troubleshooting
-
-**Page is blank or shows an error on first load**
-> Clear localStorage: DevTools → Application → Local Storage → Clear all → Refresh
-
-**Currency shows wrong symbol or amounts**
-> Click the currency dropdown → hit **Refresh** to re-fetch live rates
-
-**Notifications not appearing**
-> Make sure you are in the **Admin** role. Notifications are auto-generated on load from overdue bills and large transactions in mock data.
-
-**`npm install` fails**
-> Ensure Node.js v18+ is installed. Run `node -v` to confirm.
-
----
-
-## License
-
-MIT — free to use, modify, and distribute.
-
----
-
-*Built with Vite · React 19 · JavaScript · Tailwind CSS v4 · Zustand · Recharts · Framer Motion*
