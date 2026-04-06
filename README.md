@@ -6,7 +6,7 @@ A full-featured personal finance dashboard built with **React 19 (Vite)**, **Jav
 
 ## Live Demo
 
-link:https://zorvyn-finance-dashboard-eta-dun.vercel.app/dashboard
+link:https://zorvyn-finance-dashboard-eta-dun.vercel.app
 
 
 | Overview | Transactions | Insights |
