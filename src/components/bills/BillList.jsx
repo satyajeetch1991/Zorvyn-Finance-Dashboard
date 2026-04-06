@@ -44,20 +44,20 @@ export function BillList() {
       {/* Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">Bill Reminders</h1>
+          <h1 className="text-2xl font-bold">Payment Desk</h1>
           <p className="text-sm text-muted-foreground mt-0.5">
             {formatCurrency(convertFromINR(totalUnpaid), false, selectedCurrency, currencyInfo.locale)} unpaid
             {overdueCount > 0 && <span className="text-red-500 ml-2">· {overdueCount} overdue</span>}
           </p>
         </div>
         {isAdmin && (<Button size="sm" onClick={handleAdd} className="gap-1.5">
-            <Plus className="h-4 w-4"/> Add Bill
+            <Plus className="h-4 w-4"/> New Due Item
           </Button>)}
       </div>
 
       {/* List */}
       <div className="space-y-2">
-        {sorted.length === 0 && (<div className="text-center py-16 text-muted-foreground text-sm">No bills added yet.</div>)}
+        {sorted.length === 0 && (<div className="text-center py-16 text-muted-foreground text-sm">No due items added yet.</div>)}
         {sorted.map((bill, i) => {
             const status = getBillStatusFull(bill);
             const cfg = STATUS_CONFIG[status];

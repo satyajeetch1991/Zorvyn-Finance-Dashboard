@@ -25,8 +25,8 @@ function SortButton({ field, label }) {
 function DeleteConfirmDialog({ onConfirm, onCancel }) {
     return (<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
       <div className="bg-card rounded-xl border p-6 max-w-sm w-full mx-4 shadow-xl">
-        <h3 className="font-semibold text-lg mb-2">Delete Transaction</h3>
-        <p className="text-muted-foreground text-sm mb-4">Are you sure you want to delete this transaction? This action cannot be undone.</p>
+        <h3 className="font-semibold text-lg mb-2">Delete Entry</h3>
+        <p className="text-muted-foreground text-sm mb-4">Are you sure you want to delete this entry? This action cannot be undone.</p>
         <div className="flex justify-end gap-2">
           <Button variant="outline" onClick={onCancel}>Cancel</Button>
           <Button variant="destructive" onClick={onConfirm}>Delete</Button>
@@ -57,12 +57,12 @@ export function TransactionList() {
     return (<div className="space-y-4">
       <div className="flex items-center justify-between flex-wrap gap-2">
         <div>
-          <h2 className="text-2xl font-bold tracking-tight">Transactions</h2>
-          <p className="text-sm text-muted-foreground">{totalCount} transaction{totalCount !== 1 ? "s" : ""}</p>
+          <h2 className="text-2xl font-bold tracking-tight">Cash Log</h2>
+          <p className="text-sm text-muted-foreground">{totalCount} entries</p>
         </div>
         {isAdmin && (<Button onClick={openAdd} className="gap-1.5">
             <Plus className="h-4 w-4"/>
-            Add Transaction
+            New Entry
           </Button>)}
       </div>
 
@@ -85,7 +85,7 @@ export function TransactionList() {
             <AnimatePresence mode="popLayout">
               {transactions.length === 0 ? (<tr>
                   <td colSpan={isAdmin ? 6 : 5}>
-                    <EmptyState title="No transactions found" description={hasActiveFilters ? "Try adjusting your filters." : "Add a transaction to get started."} action={hasActiveFilters ? { label: "Clear filters", onClick: resetFilters } : undefined}/>
+                    <EmptyState title="No entries found" description={hasActiveFilters ? "Try adjusting your filters." : "Add an entry to get started."} action={hasActiveFilters ? { label: "Clear filters", onClick: resetFilters } : undefined}/>
                   </td>
                 </tr>) : (transactions.map((tx) => (<motion.tr key={tx.id} layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="border-b last:border-0 hover:bg-muted/30 transition-colors">
                     <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{formatDate(tx.date)}</td>
@@ -122,7 +122,7 @@ export function TransactionList() {
 
       {/* Mobile cards */}
       <div className="md:hidden space-y-2">
-        {transactions.length === 0 ? (<EmptyState title="No transactions found" description={hasActiveFilters ? "Try adjusting your filters." : "Add a transaction to get started."} action={hasActiveFilters ? { label: "Clear filters", onClick: resetFilters } : undefined}/>) : (transactions.map((tx) => (<motion.div key={tx.id} layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="rounded-xl border bg-card p-4">
+        {transactions.length === 0 ? (<EmptyState title="No entries found" description={hasActiveFilters ? "Try adjusting your filters." : "Add an entry to get started."} action={hasActiveFilters ? { label: "Clear filters", onClick: resetFilters } : undefined}/>) : (transactions.map((tx) => (<motion.div key={tx.id} layout initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="rounded-xl border bg-card p-4">
               <div className="flex items-start justify-between gap-2">
                 <div className="flex-1 min-w-0">
                   <p className="font-medium truncate">{tx.description}</p>

@@ -12,13 +12,13 @@ export function RoleSwitcher() {
           <SelectItem value="viewer">
             <span className="flex items-center gap-2">
               <Eye className="h-3.5 w-3.5 text-blue-500"/>
-              Viewer
+              Read Only
             </span>
           </SelectItem>
           <SelectItem value="admin">
             <span className="flex items-center gap-2">
               <Shield className="h-3.5 w-3.5 text-amber-500"/>
-              Admin
+              Full Access
             </span>
           </SelectItem>
         </SelectContent>

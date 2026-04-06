@@ -65,8 +65,8 @@ export function SpendingHeatmap() {
     }, [grid]);
     return (<Card className="overflow-hidden">
       <CardHeader className="pb-2">
-        <CardTitle className="text-sm font-semibold">Spending Heatmap</CardTitle>
-        <p className="text-xs text-muted-foreground">Daily expense intensity over the past year</p>
+        <CardTitle className="text-sm font-semibold">Activity Heat Grid</CardTitle>
+        <p className="text-xs text-muted-foreground">Daily outflow intensity over the past year</p>
       </CardHeader>
       <CardContent className="overflow-x-auto pb-4">
         <div className="relative inline-flex flex-col gap-1 min-w-max">

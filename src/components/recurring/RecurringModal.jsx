@@ -48,7 +48,7 @@ export function RecurringModal({ open, onClose, item }) {
     }
     return (<Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
-        <DialogHeader><DialogTitle>{item ? "Edit Recurring" : "Add Recurring Transaction"}</DialogTitle></DialogHeader>
+        <DialogHeader><DialogTitle>{item ? "Edit AutoFlow" : "Add AutoFlow"}</DialogTitle></DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-1">
             <Label>Description</Label>
@@ -103,7 +103,7 @@ export function RecurringModal({ open, onClose, item }) {
           </div>
           <div className="flex gap-2 justify-end pt-2">
             <Button type="button" variant="outline" onClick={onClose}>Cancel</Button>
-            <Button type="submit">{item ? "Save Changes" : "Add Recurring"}</Button>
+            <Button type="submit">{item ? "Save Changes" : "Add AutoFlow"}</Button>
           </div>
         </form>
       </DialogContent>

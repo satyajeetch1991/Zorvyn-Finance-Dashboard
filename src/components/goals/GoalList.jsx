@@ -29,19 +29,19 @@ export function GoalList() {
     return (<div className="space-y-4">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">Goal Tracker</h1>
+          <h1 className="text-2xl font-bold">Milestone Vault</h1>
           <p className="text-sm text-muted-foreground mt-0.5">
             {formatCurrency(convertFromINR(totalSaved), false, selectedCurrency, currencyInfo.locale)} saved of {formatCurrency(convertFromINR(totalTarget), false, selectedCurrency, currencyInfo.locale)} total target
           </p>
         </div>
         {isAdmin && (<Button size="sm" onClick={() => { setActiveGoal(undefined); setModalOpen(true); }} className="gap-1.5">
-            <Plus className="h-4 w-4"/> New Goal
+            <Plus className="h-4 w-4"/> New Milestone
           </Button>)}
       </div>
 
       {goals.length === 0 && (<div className="text-center py-16 text-muted-foreground text-sm">
           <Target className="h-10 w-10 mx-auto opacity-20 mb-3"/>
-          No goals yet. Create your first goal!
+          No milestones yet. Create your first one!
         </div>)}
 
       <div className="grid gap-4 sm:grid-cols-2">

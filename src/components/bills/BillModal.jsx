@@ -49,12 +49,12 @@ export function BillModal({ open, onClose, bill }) {
     return (<Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>{isEdit ? "Edit Bill" : "Add Bill"}</DialogTitle>
+          <DialogTitle>{isEdit ? "Edit Due Item" : "Add Due Item"}</DialogTitle>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-1">
-            <Label>Bill Name</Label>
-            <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g. Electricity Bill" required/>
+            <Label>Item Name</Label>
+            <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g. Fiber Internet Pro" required/>
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1">
@@ -75,7 +75,7 @@ export function BillModal({ open, onClose, bill }) {
           </div>
           <div className="flex items-center gap-3">
             <input type="checkbox" id="recurring" checked={isRecurring} onChange={(e) => setIsRecurring(e.target.checked)} className="h-4 w-4 accent-primary"/>
-            <Label htmlFor="recurring" className="cursor-pointer">Recurring bill</Label>
+            <Label htmlFor="recurring" className="cursor-pointer">Auto due item</Label>
           </div>
           {isRecurring && (<div className="space-y-1">
               <Label>Frequency</Label>
@@ -94,7 +94,7 @@ export function BillModal({ open, onClose, bill }) {
           </div>
           <div className="flex gap-2 justify-end pt-2">
             <Button type="button" variant="outline" onClick={onClose}>Cancel</Button>
-            <Button type="submit">{isEdit ? "Save Changes" : "Add Bill"}</Button>
+            <Button type="submit">{isEdit ? "Save Changes" : "Add Due Item"}</Button>
           </div>
         </form>
       </DialogContent>

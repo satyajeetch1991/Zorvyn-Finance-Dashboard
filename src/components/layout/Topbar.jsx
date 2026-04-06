@@ -9,16 +9,16 @@ import { useCurrencyStore } from "@/store/useCurrencyStore";
 import { TrendingUp } from "lucide-react";
 import { useEffect } from "react";
 const PAGE_TITLES = {
-    "/dashboard": "Overview",
-    "/dashboard/transactions": "Transactions",
-    "/dashboard/insights": "Insights",
-    "/dashboard/bills": "Bills",
-    "/dashboard/goals": "Goals",
-    "/dashboard/recurring": "Recurring",
+    "/dashboard": "Command Center",
+    "/dashboard/transactions": "Cash Log",
+    "/dashboard/insights": "Insight Lab",
+    "/dashboard/bills": "Payment Desk",
+    "/dashboard/goals": "Milestone Vault",
+    "/dashboard/recurring": "AutoFlow",
 };
 export function Topbar() {
   const { pathname } = useLocation();
-    const title = PAGE_TITLES[pathname] || "Dashboard";
+    const title = PAGE_TITLES[pathname] || "Finance Hub";
     const fetchRates = useCurrencyStore((s) => s.fetchRates);
     useNotificationEngine();
     useEffect(() => { fetchRates(); }, [fetchRates]);
@@ -30,7 +30,7 @@ export function Topbar() {
           <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
             <TrendingUp className="h-4 w-4 text-primary-foreground"/>
           </div>
-          <span className="font-bold text-base tracking-tight">Zorvyn</span>
+          <span className="font-bold text-base tracking-tight">Nexa</span>
         </div>
 
         {/* Page title — desktop */}

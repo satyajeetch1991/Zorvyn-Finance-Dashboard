@@ -20,7 +20,7 @@ export function UpcomingBillsWidget() {
       <CardHeader className="pb-3 flex-row items-center justify-between space-y-0">
         <div className="flex items-center gap-2">
           <Receipt className="h-4 w-4 text-muted-foreground"/>
-          <CardTitle className="text-sm font-semibold">Upcoming Bills</CardTitle>
+          <CardTitle className="text-sm font-semibold">Due Soon</CardTitle>
           {overdueCount > 0 && (<span className="rounded-full bg-red-500 px-1.5 py-0.5 text-[10px] font-bold text-white">{overdueCount}</span>)}
         </div>
         <Link to="/dashboard/bills">
@@ -32,7 +32,7 @@ export function UpcomingBillsWidget() {
       <CardContent className="flex-1 space-y-2">
         {upcoming.length === 0 ? (<div className="flex flex-col items-center justify-center h-full py-8 text-muted-foreground gap-2">
             <Receipt className="h-8 w-8 opacity-20"/>
-            <p className="text-xs">No upcoming bills</p>
+            <p className="text-xs">Nothing due soon</p>
           </div>) : (upcoming.map((bill, i) => {
             const status = getBillStatus(bill.dueDate);
             const daysLeft = getDaysUntilDue(bill.dueDate);

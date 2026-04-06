@@ -8,8 +8,8 @@ const SpendingHeatmap = lazy(() => import("@/components/dashboard/SpendingHeatma
 export default function InsightsPage() {
     return (<div className="space-y-6 max-w-7xl mx-auto">
       <div>
-        <h2 className="text-2xl font-bold tracking-tight">Insights</h2>
-        <p className="text-muted-foreground text-sm mt-1">Understand your spending patterns and financial trends</p>
+        <h2 className="text-2xl font-bold tracking-tight">Insight Lab</h2>
+        <p className="text-muted-foreground text-sm mt-1">Decode behavior patterns and money trends</p>
       </div>
 
       {/* Spending Heatmap */}
@@ -32,7 +32,7 @@ export default function InsightsPage() {
 
       {/* Key observations */}
       <div>
-        <h3 className="text-lg font-semibold mb-3">Key Observations</h3>
+        <h3 className="text-lg font-semibold mb-3">Action Highlights</h3>
         <ObservationsList />
       </div>
     </div>);

@@ -70,7 +70,7 @@ export const useCurrencyStore = create()(persist((set, get) => ({
     getSymbol: () => CURRENCIES[get().selectedCurrency].symbol,
     getInfo: () => CURRENCIES[get().selectedCurrency],
 }), {
-    name: "zorvyn_currency",
+    name: "nexa_currency",
     partialize: (s) => ({
         selectedCurrency: s.selectedCurrency,
         rates: s.rates,

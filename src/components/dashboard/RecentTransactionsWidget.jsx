@@ -15,7 +15,7 @@ export function RecentTransactionsWidget() {
         .slice(0, 6);
     return (<Card className="flex flex-col h-full">
       <CardHeader className="pb-3 flex-row items-center justify-between space-y-0">
-        <CardTitle className="text-sm font-semibold">Recent Transactions</CardTitle>
+        <CardTitle className="text-sm font-semibold">Latest Entries</CardTitle>
         <Link to="/dashboard/transactions">
           <Button variant="ghost" size="sm" className="h-6 text-xs gap-1 text-muted-foreground">
             View all <ArrowRight className="h-3 w-3"/>

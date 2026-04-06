@@ -3,24 +3,24 @@ import { LayoutDashboard, ArrowLeftRight, Lightbulb, ChevronLeft, ChevronRight, 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 const NAV_ITEMS = [
-    { href: "/dashboard", label: "Overview", icon: LayoutDashboard },
-    { href: "/dashboard/transactions", label: "Transactions", icon: ArrowLeftRight },
-    { href: "/dashboard/insights", label: "Insights", icon: Lightbulb },
-    { href: "/dashboard/bills", label: "Bills", icon: Receipt },
-    { href: "/dashboard/goals", label: "Goals", icon: Target },
-    { href: "/dashboard/recurring", label: "Recurring", icon: RotateCcw },
+  { href: "/dashboard", label: "Command Center", icon: LayoutDashboard },
+  { href: "/dashboard/transactions", label: "Cash Log", icon: ArrowLeftRight },
+  { href: "/dashboard/insights", label: "Insight Lab", icon: Lightbulb },
+  { href: "/dashboard/bills", label: "Payment Desk", icon: Receipt },
+  { href: "/dashboard/goals", label: "Milestone Vault", icon: Target },
+  { href: "/dashboard/recurring", label: "AutoFlow", icon: RotateCcw },
 ];
 export function Sidebar() {
     const { pathname } = useLocation();
     const [collapsed, setCollapsed] = useState(false);
     useEffect(() => {
-        const stored = localStorage.getItem("zorvyn_sidebar_collapsed");
+    const stored = localStorage.getItem("nexa_sidebar_collapsed");
         if (stored)
             setCollapsed(stored === "true");
     }, []);
     const toggle = () => {
         setCollapsed((c) => {
-            localStorage.setItem("zorvyn_sidebar_collapsed", String(!c));
+      localStorage.setItem("nexa_sidebar_collapsed", String(!c));
             return !c;
         });
     };

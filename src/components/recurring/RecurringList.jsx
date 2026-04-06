@@ -38,7 +38,7 @@ export function RecurringList() {
     return (<div className="space-y-4">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-2xl font-bold">Recurring Transactions</h1>
+          <h1 className="text-2xl font-bold">AutoFlow</h1>
           <p className="text-sm text-muted-foreground mt-0.5">
             Monthly net estimate:&nbsp;
             <span className={monthlyEstimate >= 0 ? "text-emerald-600" : "text-red-500"}>
@@ -47,11 +47,11 @@ export function RecurringList() {
           </p>
         </div>
         {isAdmin && (<Button size="sm" onClick={() => { setEditItem(undefined); setModalOpen(true); }} className="gap-1.5">
-            <Plus className="h-4 w-4"/> Add Recurring
+            <Plus className="h-4 w-4"/> Add AutoFlow
           </Button>)}
       </div>
 
-      {[{ label: "Active", list: activeItems }, { label: "Inactive", list: inactiveItems }].map(({ label, list }) => list.length > 0 ? (<div key={label} className="space-y-2">
+      {[{ label: "Live", list: activeItems }, { label: "Paused", list: inactiveItems }].map(({ label, list }) => list.length > 0 ? (<div key={label} className="space-y-2">
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">{label}</p>
             {list.map((item, i) => (<motion.div key={item.id} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.04 }}>
                 <Card className={`p-4 ${!item.isActive ? "opacity-60" : ""}`}>
@@ -89,7 +89,7 @@ export function RecurringList() {
               </motion.div>))}
           </div>) : null)}
 
-      {items.length === 0 && (<div className="text-center py-16 text-muted-foreground text-sm">No recurring transactions set up yet.</div>)}
+      {items.length === 0 && (<div className="text-center py-16 text-muted-foreground text-sm">No autoflows set up yet.</div>)}
 
       <RecurringModal open={modalOpen} onClose={() => setModalOpen(false)} item={editItem}/>
     </div>);

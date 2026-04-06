@@ -20,17 +20,17 @@ export default function DashboardPage() {
       <div className="flex items-start justify-between gap-4">
         <div className="space-y-1">
           <GreetingBanner />
-          <p className="text-muted-foreground text-sm pl-10">Here's your financial summary for today</p>
+          <p className="text-muted-foreground text-sm pl-10">Your custom money pulse for today</p>
         </div>
         {role === "admin" && (<div className="flex items-center gap-2 shrink-0">
             <Link to="/dashboard/bills" className="inline-flex items-center gap-1.5 h-8 px-2.5 text-xs font-medium rounded-lg border border-border bg-background hover:bg-muted transition-colors">
-              <Receipt className="h-3.5 w-3.5"/>Add Bill
+              <Receipt className="h-3.5 w-3.5"/>New Due Item
             </Link>
             <Link to="/dashboard/goals" className="inline-flex items-center gap-1.5 h-8 px-2.5 text-xs font-medium rounded-lg border border-border bg-background hover:bg-muted transition-colors">
-              <Target className="h-3.5 w-3.5"/>Add Goal
+              <Target className="h-3.5 w-3.5"/>New Milestone
             </Link>
             <Button size="sm" className="gap-1.5 h-8 text-xs" onClick={() => setTxModalOpen(true)}>
-              <Plus className="h-3.5 w-3.5"/>Transaction
+              <Plus className="h-3.5 w-3.5"/>New Entry
             </Button>
           </div>)}
       </div>

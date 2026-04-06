@@ -14,7 +14,7 @@ export function ObservationsList() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [transactions, selectedCurrency]);
     if (insights.length === 0) {
-        return <EmptyState title="No insights yet" description="Add transactions to generate financial insights."/>;
+        return <EmptyState title="No highlights yet" description="Add entries to generate insight cards."/>;
     }
     return (<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {insights.map((insight, i) => (<InsightCard key={insight.id} insight={insight} index={i}/>))}

@@ -2,12 +2,12 @@ import { Link, useLocation } from "react-router-dom";
 import { LayoutDashboard, ArrowLeftRight, Lightbulb, Receipt, Target, RotateCcw } from "lucide-react";
 import { cn } from "@/lib/utils";
 const NAV_ITEMS = [
-    { href: "/dashboard", label: "Home", icon: LayoutDashboard },
-    { href: "/dashboard/transactions", label: "Txns", icon: ArrowLeftRight },
-    { href: "/dashboard/bills", label: "Bills", icon: Receipt },
-    { href: "/dashboard/goals", label: "Goals", icon: Target },
-    { href: "/dashboard/recurring", label: "Recurring", icon: RotateCcw },
-    { href: "/dashboard/insights", label: "Insights", icon: Lightbulb },
+    { href: "/dashboard", label: "Center", icon: LayoutDashboard },
+    { href: "/dashboard/transactions", label: "Log", icon: ArrowLeftRight },
+    { href: "/dashboard/bills", label: "Desk", icon: Receipt },
+    { href: "/dashboard/goals", label: "Vault", icon: Target },
+    { href: "/dashboard/recurring", label: "Auto", icon: RotateCcw },
+    { href: "/dashboard/insights", label: "Lab", icon: Lightbulb },
 ];
 export function MobileNav() {
     const { pathname } = useLocation();

@@ -1,11 +1,11 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 const MOCK_RECURRING = [
-    { id: "rec_1", description: "Monthly Salary", amount: 85000, type: "income", category: "salary", frequency: "monthly", startDate: "2024-01-01", nextDueDate: "2026-04-30", isActive: true, createdAt: new Date().toISOString() },
-    { id: "rec_2", description: "House Rent", amount: 12000, type: "expense", category: "housing", frequency: "monthly", startDate: "2024-01-01", nextDueDate: "2026-04-01", isActive: true, createdAt: new Date().toISOString() },
-    { id: "rec_3", description: "Netflix", amount: 649, type: "expense", category: "entertainment", frequency: "monthly", startDate: "2024-03-01", nextDueDate: "2026-04-20", isActive: true, createdAt: new Date().toISOString() },
-    { id: "rec_4", description: "Gym Membership", amount: 1200, type: "expense", category: "health", frequency: "monthly", startDate: "2024-01-01", nextDueDate: "2026-04-25", isActive: true, createdAt: new Date().toISOString() },
-    { id: "rec_5", description: "Phone Bill", amount: 599, type: "expense", category: "utilities", frequency: "monthly", startDate: "2024-01-01", nextDueDate: "2026-04-15", isActive: false, createdAt: new Date().toISOString() },
+    { id: "rec_1", description: "Primary Payroll", amount: 104000, type: "income", category: "salary", frequency: "monthly", startDate: "2024-01-01", nextDueDate: "2026-04-30", isActive: true, createdAt: new Date().toISOString() },
+    { id: "rec_2", description: "Studio Lease Auto-Debit", amount: 30500, type: "expense", category: "housing", frequency: "monthly", startDate: "2024-01-01", nextDueDate: "2026-04-03", isActive: true, createdAt: new Date().toISOString() },
+    { id: "rec_3", description: "Cloud Apps Suite", amount: 1299, type: "expense", category: "utilities", frequency: "monthly", startDate: "2024-03-01", nextDueDate: "2026-04-19", isActive: true, createdAt: new Date().toISOString() },
+    { id: "rec_4", description: "Strength Lab Membership", amount: 1800, type: "expense", category: "health", frequency: "monthly", startDate: "2024-01-01", nextDueDate: "2026-04-24", isActive: true, createdAt: new Date().toISOString() },
+    { id: "rec_5", description: "Mobile Data Plan", amount: 899, type: "expense", category: "utilities", frequency: "monthly", startDate: "2024-01-01", nextDueDate: "2026-04-15", isActive: false, createdAt: new Date().toISOString() },
 ];
 let idCounter = 1;
 function generateId() { return `rec_${Date.now()}_${idCounter++}`; }
@@ -17,7 +17,7 @@ export const useRecurringStore = create()(persist((set) => ({
     toggleActive: (id) => set((s) => ({ items: s.items.map((r) => r.id === id ? { ...r, isActive: !r.isActive } : r) })),
     updateNextDueDate: (id, nextDueDate) => set((s) => ({ items: s.items.map((r) => r.id === id ? { ...r, nextDueDate } : r) })),
 }), {
-    name: "zorvyn_recurring",
+    name: "nexa_recurring",
     onRehydrateStorage: () => (state) => {
         if (state && state.items.length === 0)
             state.items = MOCK_RECURRING;

@@ -66,11 +66,11 @@ export function GoalModal({ open, onClose, goal, mode = "edit" }) {
     }
     return (<Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
-        <DialogHeader><DialogTitle>{goal ? "Edit Goal" : "New Goal"}</DialogTitle></DialogHeader>
+        <DialogHeader><DialogTitle>{goal ? "Edit Milestone" : "New Milestone"}</DialogTitle></DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-1">
-            <Label>Goal Name</Label>
-            <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g. Emergency Fund" required/>
+            <Label>Milestone Name</Label>
+            <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="e.g. 12-Month Safety Buffer" required/>
           </div>
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1">
@@ -97,7 +97,7 @@ export function GoalModal({ open, onClose, goal, mode = "edit" }) {
           </div>
           <div className="flex gap-2 justify-end pt-2">
             <Button type="button" variant="outline" onClick={onClose}>Cancel</Button>
-            <Button type="submit">{goal ? "Save Changes" : "Create Goal"}</Button>
+            <Button type="submit">{goal ? "Save Changes" : "Create Milestone"}</Button>
           </div>
         </form>
       </DialogContent>

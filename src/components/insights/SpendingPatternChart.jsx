@@ -47,7 +47,7 @@ export function SpendingPatternChart() {
     if (chartData.length < 2) {
         return (<Card>
         <CardHeader>
-          <CardTitle className="text-base">Spending Patterns by Category</CardTitle>
+          <CardTitle className="text-base">Category Spend Rhythm</CardTitle>
         </CardHeader>
         <CardContent>
           <EmptyState title="Not enough data" description="Need at least 2 months of transactions."/>
@@ -57,8 +57,8 @@ export function SpendingPatternChart() {
     return (<motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Spending Patterns by Category</CardTitle>
-          <p className="text-xs text-muted-foreground">Monthly expense trends for your top 5 categories</p>
+          <CardTitle className="text-base">Category Spend Rhythm</CardTitle>
+          <p className="text-xs text-muted-foreground">Monthly outflow trends for your top 5 categories</p>
         </CardHeader>
         <CardContent>
           <ResponsiveContainer width="100%" height={280}>

@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 export function DashboardShell({ children }) {
     const [collapsed, setCollapsed] = useState(false);
     useEffect(() => {
-        const stored = localStorage.getItem("zorvyn_sidebar_collapsed");
+        const stored = localStorage.getItem("nexa_sidebar_collapsed");
         if (stored)
             setCollapsed(stored === "true");
         // Listen for storage changes (from Sidebar component)
         const handler = () => {
-            const s = localStorage.getItem("zorvyn_sidebar_collapsed");
+            const s = localStorage.getItem("nexa_sidebar_collapsed");
             setCollapsed(s === "true");
         };
         window.addEventListener("storage", handler);

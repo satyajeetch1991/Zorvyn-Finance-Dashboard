@@ -15,4 +15,4 @@ export const useNotificationStore = create()(persist((set, get) => ({
     dismiss: (id) => set((s) => ({ notifications: s.notifications.filter((n) => n.id !== id) })),
     clearAll: () => set({ notifications: [] }),
     unreadCount: () => get().notifications.filter((n) => !n.isRead).length,
-}), { name: "zorvyn_notifications" }));
+}), { name: "nexa_notifications" }));

@@ -60,7 +60,7 @@ export function TransactionModal({ open, onClose, transaction }) {
     return (<Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>{isEdit ? "Edit Transaction" : "Add Transaction"}</DialogTitle>
+          <DialogTitle>{isEdit ? "Edit Entry" : "Add Entry"}</DialogTitle>
         </DialogHeader>
         <div className="space-y-4 py-2">
           {/* Date */}
@@ -114,7 +114,7 @@ export function TransactionModal({ open, onClose, transaction }) {
         </div>
         <DialogFooter>
           <Button variant="outline" onClick={onClose}>Cancel</Button>
-          <Button onClick={handleSubmit}>{isEdit ? "Save Changes" : "Add Transaction"}</Button>
+          <Button onClick={handleSubmit}>{isEdit ? "Save Changes" : "Add Entry"}</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>);

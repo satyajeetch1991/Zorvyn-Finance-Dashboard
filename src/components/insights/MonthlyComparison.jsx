@@ -58,7 +58,7 @@ export function MonthlyComparison() {
     }));
     if (allMonths.length < 2) {
         return (<Card>
-        <CardHeader><CardTitle className="text-base">Monthly Comparison</CardTitle></CardHeader>
+        <CardHeader><CardTitle className="text-base">Month Pulse</CardTitle></CardHeader>
         <CardContent><EmptyState title="Not enough data" description="Need at least 2 months of data for comparison."/></CardContent>
       </Card>);
     }
@@ -68,8 +68,8 @@ export function MonthlyComparison() {
       {/* Bar chart */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Monthly Comparison</CardTitle>
-          <p className="text-xs text-muted-foreground">Income vs expenses — last {chartData.length} months</p>
+          <CardTitle className="text-base">Month Pulse</CardTitle>
+          <p className="text-xs text-muted-foreground">Inflow vs outflow for the last {chartData.length} months</p>
         </CardHeader>
         <CardContent>
           <ResponsiveContainer width="100%" height={240}>
@@ -90,7 +90,7 @@ export function MonthlyComparison() {
       {/* Month-by-month table */}
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Month-by-Month Breakdown</CardTitle>
+          <CardTitle className="text-base">Month Ledger Table</CardTitle>
           <p className="text-xs text-muted-foreground">All recorded months with savings rate and expense trend</p>
         </CardHeader>
         <CardContent className="p-0">

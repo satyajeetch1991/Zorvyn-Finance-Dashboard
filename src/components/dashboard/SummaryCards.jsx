@@ -5,21 +5,21 @@ export function SummaryCards() {
     const summary = useSummary();
     const cards = [
         {
-            title: "Total Balance",
+            title: "Net Position",
             value: summary.totalBalance,
             changePercent: summary.balanceChangePercent,
             icon: <Wallet className="h-5 w-5 text-blue-600 dark:text-blue-400"/>,
             colorClass: "bg-blue-100 dark:bg-blue-900/40",
         },
         {
-            title: "Total Income",
+            title: "Total Inflow",
             value: summary.totalIncome,
             changePercent: summary.incomeChangePercent,
             icon: <TrendingUp className="h-5 w-5 text-emerald-600 dark:text-emerald-400"/>,
             colorClass: "bg-emerald-100 dark:bg-emerald-900/40",
         },
         {
-            title: "Total Expenses",
+            title: "Total Outflow",
             value: summary.totalExpenses,
             changePercent: summary.expenseChangePercent,
             icon: <TrendingDown className="h-5 w-5 text-red-600 dark:text-red-400"/>,

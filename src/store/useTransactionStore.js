@@ -26,7 +26,7 @@ export const useTransactionStore = create()(persist((set) => ({
     })),
     resetToMockData: () => set({ transactions: MOCK_TRANSACTIONS }),
 }), {
-    name: "zorvyn_transactions",
+    name: "nexa_transactions",
     onRehydrateStorage: () => (state) => {
         // Seed with mock data if storage is empty
         if (state && state.transactions.length === 0) {

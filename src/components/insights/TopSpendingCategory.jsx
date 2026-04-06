@@ -32,7 +32,7 @@ export function TopSpendingCategory() {
     }, [transactions, monthlySummaries]);
     if (top6.length === 0) {
         return (<Card>
-        <CardHeader><CardTitle className="text-base">Top Spending Categories</CardTitle></CardHeader>
+        <CardHeader><CardTitle className="text-base">Highest Cost Buckets</CardTitle></CardHeader>
         <CardContent><EmptyState title="No expense data" description="Add expense transactions to see categories."/></CardContent>
       </Card>);
     }
@@ -41,8 +41,8 @@ export function TopSpendingCategory() {
       <CardHeader>
         <div className="flex items-start justify-between">
           <div>
-            <CardTitle className="text-base">Top Spending Categories</CardTitle>
-            <p className="text-xs text-muted-foreground mt-0.5">By total amount spent — all time</p>
+            <CardTitle className="text-base">Highest Cost Buckets</CardTitle>
+            <p className="text-xs text-muted-foreground mt-0.5">By cumulative outflow</p>
           </div>
           <span className="text-xs text-muted-foreground bg-muted px-2 py-0.5 rounded-full">{top6.length} categories</span>
         </div>

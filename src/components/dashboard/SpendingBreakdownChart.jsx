@@ -30,8 +30,8 @@ export function SpendingBreakdownChart() {
     }));
     if (top6.length === 0) {
         return (<Card>
-        <CardHeader><CardTitle className="text-base">Spending Breakdown</CardTitle></CardHeader>
-        <CardContent><EmptyState title="No expense data" description="Add expense transactions to see your spending breakdown."/></CardContent>
+        <CardHeader><CardTitle className="text-base">Expense Mix</CardTitle></CardHeader>
+        <CardContent><EmptyState title="No expense data" description="Add expense entries to see your expense mix."/></CardContent>
       </Card>);
     }
     const handleClick = (entry) => {
@@ -43,8 +43,8 @@ export function SpendingBreakdownChart() {
     return (<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}>
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Spending Breakdown</CardTitle>
-          <p className="text-xs text-muted-foreground">Click a slice to filter transactions</p>
+          <CardTitle className="text-base">Expense Mix</CardTitle>
+          <p className="text-xs text-muted-foreground">Click a slice to filter entries</p>
         </CardHeader>
         <CardContent>
           <ResponsiveContainer width="100%" height={280}>

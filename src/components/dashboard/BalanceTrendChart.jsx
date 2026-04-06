@@ -33,15 +33,15 @@ export function BalanceTrendChart() {
     const textColor = isDark ? "#a0aec0" : "#718096";
     if (balanceTrend.length === 0) {
         return (<Card>
-        <CardHeader><CardTitle className="text-base">Balance Trend</CardTitle></CardHeader>
-        <CardContent><EmptyState title="No data" description="Add transactions to see your balance trend."/></CardContent>
+        <CardHeader><CardTitle className="text-base">Net Flow Curve</CardTitle></CardHeader>
+        <CardContent><EmptyState title="No data" description="Add entries to see your net flow curve."/></CardContent>
       </Card>);
     }
     return (<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}>
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Balance Trend</CardTitle>
-          <p className="text-xs text-muted-foreground">Cumulative balance over time</p>
+          <CardTitle className="text-base">Net Flow Curve</CardTitle>
+          <p className="text-xs text-muted-foreground">Cumulative position over time</p>
         </CardHeader>
         <CardContent>
           <ResponsiveContainer width="100%" height={280}>
